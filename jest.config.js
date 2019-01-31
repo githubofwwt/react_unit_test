@@ -6,5 +6,5 @@ module.exports = {
   clearMocks: true,               // 每次测试之间自动清除模拟调用和实例
   coverageDirectory: "coverage",  // 输出覆盖率
   roots: ['<rootDir>/src'],
-  testMatch: ['**/*.test.js'],
+  testMatch: ['**/*.spec.js'],
 };
