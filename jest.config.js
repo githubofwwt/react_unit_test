@@ -7,4 +7,5 @@ module.exports = {
 	coverageDirectory: "coverage",  // 输出覆盖率
 	roots: ["<rootDir>/src"],
 	testMatch: ["**/*.spec.js"],
+	setupTestFrameworkScriptFile: "./setupTestFramework.js",
 };
