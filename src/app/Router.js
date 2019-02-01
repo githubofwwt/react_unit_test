@@ -1,10 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {Layout} from 'antd'
 import Header from './components/Header'
 import Sider from './components/Sider'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Admin from './pages/Admin'
 
 export default class Router extends React.Component {
 	render () {
@@ -17,7 +18,8 @@ export default class Router extends React.Component {
 						<Layout>
 							<Layout.Content style={{ backgroundColor: '#eee' }}>
 								<Switch>
-									<Redirect from="/" exact to="/Home" />
+									<Route path="/home" component={Home} />
+									<Route path="/admin" component={Admin} />
 									<Route path="*" component={Home} />
 								</Switch>
 							</Layout.Content>
