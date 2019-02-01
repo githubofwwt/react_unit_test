@@ -12,9 +12,9 @@ export default class Router extends React.Component {
 		return (
 			<BrowserRouter>
 				<Layout style={{ minHeight: '100vh' }}>
-					<Header>HEADER</Header>
+					<Header />
 					<Layout>
-						<Sider>SIDER</Sider>
+						<Sider />
 						<Layout>
 							<Layout.Content style={{ backgroundColor: '#eee' }}>
 								<Switch>
@@ -23,7 +23,7 @@ export default class Router extends React.Component {
 									<Route path="*" component={Home} />
 								</Switch>
 							</Layout.Content>
-							<Footer>FOOTER</Footer>
+							<Footer />
 						</Layout>
 					</Layout>
 				</Layout>
