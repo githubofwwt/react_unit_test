@@ -5,7 +5,7 @@ import './style.css'
 export default class Footer extends Component {
 	render() {
 		return (
-			<Layout.Footer style={{ textAlign: 'center', 'background-color': '#333', color: '#fff' }}>
+			<Layout.Footer className='footer'>
         Ant Design ©2018 Created by Ant UED
 			</Layout.Footer>
 		)

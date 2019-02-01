@@ -5,7 +5,7 @@ import './style.css'
 export default class Header extends Component {
 	render() {
 		return (
-			<Layout.Header style={{ color: '#fff', padding: 0, 'text-align': 'center' }} >
+			<Layout.Header className='header' >
 				Header
 			</Layout.Header>
 		)

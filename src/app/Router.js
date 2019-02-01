@@ -15,7 +15,7 @@ export default class Router extends React.Component {
 					<Layout>
 						<Sider>SIDER</Sider>
 						<Layout>
-							<Layout.Content>
+							<Layout.Content style={{ backgroundColor: '#eee' }}>
 								<Switch>
 									<Redirect from="/" exact to="/Home" />
 									<Route path="*" component={Home} />
