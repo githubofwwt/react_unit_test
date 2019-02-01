@@ -1,5 +1,16 @@
 {
   "name": "react-unit-test",
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/app/**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text-summary"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
