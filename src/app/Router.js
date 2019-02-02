@@ -6,6 +6,7 @@ import Sider from './components/Sider'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Admin from './pages/Admin'
+import './style.css'
 
 export default class Router extends React.Component {
 	render () {
@@ -17,11 +18,13 @@ export default class Router extends React.Component {
 						<Sider />
 						<Layout>
 							<Layout.Content style={{ backgroundColor: '#eee' }}>
-								<Switch>
-									<Route path="/home" component={Home} />
-									<Route path="/admin" component={Admin} />
-									<Route path="*" component={Home} />
-								</Switch>
+								<div className={'body'}>
+									<Switch>
+										<Route path="/home" component={Home} />
+										<Route path="/admin" component={Admin} />
+										<Route path="*" component={Home} />
+									</Switch>
+								</div>
 							</Layout.Content>
 							<Footer />
 						</Layout>
