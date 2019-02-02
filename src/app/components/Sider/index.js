@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Layout, Menu, Icon} from 'antd'
+import {Layout, Menu} from 'antd'
 import { withRouter, Link } from 'react-router-dom'
 import './style.css'
 
