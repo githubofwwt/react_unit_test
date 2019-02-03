@@ -17,6 +17,7 @@ describe('ListDemo', () => {
 		expect(wrapper.find('Item').at(0).props().extra).toEqual('header')
 	})
 
+  //TODO
   /**
 	 * 返回在指定索引处具有子元素的新ShallowWrapper
    */
@@ -256,4 +257,62 @@ describe('ListDemo', () => {
   it('.parent() => ShallowWrapper', () => {
 		expect(wrapper.find('span').parent().is('Item')).toEqual(true)
   })
+
+  /**
+   *返回一个有所有的父/祖先ShallowWrapper组成数组
+   * 注意只能在单个节点使用
+   */
+  it('.parents([selector]) => ShallowWrapper', () => {
+    // console.log(wrapper.find('span').parents().debug())
+    expect(wrapper.find('span').parents()).toHaveLength(2)
+  })
+
+  /**
+   *返回ShallowWrapper上指定Key的prop值
+   */
+  it('.prop(key) => Any', () => {
+    expect(wrapper.find('Item').at(0).prop('extra')).toEqual('header')
+  })
+
+  /**
+   * 返回ShallowWrapper上的props值
+   */
+  it('.props() => Object', () => {
+    expect(wrapper.props().bordered).toEqual('true')
+  })
+
+  //TODO
+  /**
+   * 循环ShallowWrapper，从头至尾进行处理
+   * 参数：fn（Function）：要为集合中的每个节点运行的reduce函数，使用以下参数
+   *        value（T）：上一次调用此函数返回的值
+   *        node（ShallowWrapper）：正在处理的当前节点周围的包装器
+   *        index（Number）：正在处理的当前节点的索引
+   *       initialValue（T[可选]）：如果提供，它将作为第一个参数传递给reduce函数的第一次调用。如果省略，node将提供第一个，迭代将在集合中的第二个节点上开始。
+   *
+   * .reduceRight(fn[, initialValue]) => Any 与之相同，只不过是从尾至头循环
+   *
+   * 注意：如果重复执行测试用例，后一次执行测试用例时的value是前一次执行测试用例时最后的返回值
+   */
+  // it('.reduce(fn[, initialValue]) => Any', () => {
+  //   function Foo() {
+  //     return (
+  //       <div>
+  //         <span amount={2} />
+  //         <span amount={4} />
+  //         <span amount={8} />
+  //       </div>
+  //     )
+  //   }
+  //   expect(shallow(<Foo />).find('span').reduce((amount, node) => amount + node.prop('amount'))).toEqual(16)
+  // })
+
+  //TODO
+  /**
+   * 返回当前节点子树的呈现HTML周围的CheerioWrapper。
+   * 注意：只能在单个节点的包装器上调用。
+   */
+  // it('.render() => CheerioWrapper', () => {
+  //   console.log(honeWrapper.find('ListDemo').render().find('span'))
+  // })
 })
