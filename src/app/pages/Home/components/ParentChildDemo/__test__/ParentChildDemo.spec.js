@@ -28,4 +28,20 @@ describe('ParentChildDemo', () => {
     parentWrapper.setState({msg: 'qwe'})
     expect(parentWrapper.find('Input').props().value).toBe('qwe')
   })
+
+  /**
+   * Shallow呈现当前节点并返回一个浅包装器。
+   * 注意：只能在单个节点的包装器上调用。
+   */
+  it('.shallow([options]) => ShallowWrapper', () => {
+    expect(parentWrapper.find('Child').shallow()).toHaveLength(1)
+  })
+
+  /**
+   * 模拟事件
+   */
+  it('.simulate(event[, ...args]) => Self', () => {
+    parentWrapper.find('Input').simulate('change', {target: {value: '123'}})
+    expect(parentWrapper.find('Input').props().value).toBe('123')
+  })
 })
